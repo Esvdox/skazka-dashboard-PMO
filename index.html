@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Стратегические проекты ООО «Парк Сказка»</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Root+UI:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+@page{size:A4 landscape;margin:6mm;}
+body{
+  font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;
+  background:#070d15;
+  color:#E6F4FD;
+  padding:14px;
+  min-height:100vh;
+}
+
+.bb-page{
+  max-width:1200px;
+  margin:0 auto;
+  position:relative;
+  background:#0c1722;
+  border-radius:18px;
+  border:1px solid rgba(57,194,234,.20);
+  box-shadow:0 24px 80px rgba(0,0,0,.55);
+  overflow:hidden;
+  isolation:isolate;
+}
+
+/* — фоновые блобы — */
+.bb-blob{position:absolute;border-radius:50%;pointer-events:none;z-index:0;}
+.b1{width:340px;height:340px;left:-90px;top:-110px;background:radial-gradient(circle,#39C2EA 0%,rgba(57,194,234,0) 65%);opacity:.18;}
+.b2{width:280px;height:280px;right:-60px;top:-80px;background:radial-gradient(circle,#34B4E8 0%,rgba(52,180,232,0) 60%);opacity:.14;}
+.b3{width:420px;height:420px;left:30%;bottom:-180px;background:radial-gradient(circle,#9CD6EE 0%,rgba(156,214,238,0) 55%);opacity:.10;}
+
+/* — волна — */
+.bb-wave{position:absolute;left:0;right:0;top:0;width:100%;height:130px;opacity:.10;z-index:0;pointer-events:none;}
+
+/* HEADER */
+.bb-hdr{
+  position:relative;z-index:2;
+  padding:18px 22px 14px;
+  border-bottom:1px solid rgba(57,194,234,.14);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+}
+.bb-h1{font-size:22px;font-weight:500;color:#E6F4FD;letter-spacing:-.02em;line-height:1.05;margin-bottom:5px;}
+.bb-h1 em{font-style:normal;color:#39C2EA;}
+.bb-sub{font-size:11px;color:#7aaabb;font-weight:400;}
+
+.bb-stats{display:flex;gap:6px;}
+.bb-stat{
+  padding:9px 14px;border-radius:14px;
+  background:rgba(57,194,234,.08);
+  border:1px solid rgba(57,194,234,.20);
+  text-align:center;min-width:90px;
+}
+.bb-stat .lb{font-size:9px;color:#9CD6EE;text-transform:uppercase;letter-spacing:.10em;margin-bottom:4px;font-weight:500;}
+.bb-stat .vl{font-size:17px;font-weight:500;color:#E6F4FD;line-height:1;letter-spacing:-.01em;}
+
+/* GRID */
+.bb-grid{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:repeat(5,1fr);
+  padding:14px 12px 10px;gap:0;
+}
+
+/* CARD */
+.bb-card{
+  display:flex;flex-direction:column;gap:8px;
+  padding:0 10px;
+  border-right:1px solid rgba(57,194,234,.10);
+}
+.bb-card:first-child{padding-left:0;}
+.bb-card:last-child{border-right:none;padding-right:0;}
+
+.bb-num{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#4a6a7a;font-weight:500;margin-bottom:2px;}
+.bb-name{font-size:13px;font-weight:500;color:#E6F4FD;letter-spacing:-.02em;line-height:1.15;min-height:32px;display:flex;align-items:flex-start;}
+
+/* LAUNCH */
+.bb-launch{
+  border-radius:14px;padding:10px 12px;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:6px;
+  border:1px solid;position:relative;overflow:hidden;flex-shrink:0;
+}
+.bb-launch::before{
+  content:'';position:absolute;right:-25px;top:-25px;
+  width:80px;height:80px;border-radius:50%;
+  background:radial-gradient(circle,rgba(57,194,234,.20),transparent 70%);
+  pointer-events:none;
+}
+.bb-launch .ll-lbl{font-size:8.5px;text-transform:uppercase;letter-spacing:.12em;font-weight:500;margin-bottom:4px;color:#9CD6EE;}
+.bb-launch .ll-dt{font-size:15px;font-weight:500;line-height:1;margin-bottom:6px;letter-spacing:-.02em;color:#E6F4FD;}
+.bb-launch .ll-dev{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:3px 9px;border-radius:999px;
+  font-size:8px;font-weight:500;border:1px solid;
+  white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;
+}
+.bb-lic{font-size:18px;flex-shrink:0;margin-top:2px;position:relative;z-index:1;color:#9CD6EE;}
+
+.bb-lnv{background:linear-gradient(135deg,#0d1d35 0%,#13243d 100%);border-color:rgba(57,194,234,.28);}
+.bb-lnv .dn{background:rgba(57,194,234,.10);border-color:rgba(57,194,234,.22);color:#9CD6EE;}
+.bb-lnv .dr{background:rgba(255,90,90,.15);border-color:rgba(255,90,90,.32);color:#ff8585;}
+
+.bb-lsky{
+  background:linear-gradient(135deg,#0a2030 0%,rgba(57,194,234,.20) 100%);
+  border-color:rgba(57,194,234,.50);
+  box-shadow:0 0 24px rgba(57,194,234,.18),inset 0 1px 0 rgba(57,194,234,.12);
+}
+.bb-lsky .ll-dt{color:#39C2EA;}
+.bb-lsky .dn{background:rgba(57,194,234,.18);border-color:rgba(57,194,234,.36);color:#39C2EA;}
+.bb-lsky .dr{background:rgba(255,90,90,.15);border-color:rgba(255,90,90,.32);color:#ff8585;}
+
+/* PROGRESS */
+.bb-pb-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;}
+.bb-pb-lbl{font-size:8.5px;text-transform:uppercase;letter-spacing:.12em;color:#7aaabb;font-weight:500;}
+.bb-pb-pct{font-size:22px;font-weight:500;color:#E6F4FD;letter-spacing:-.02em;font-variant-numeric:tabular-nums;min-width:50px;text-align:right;}
+.bb-pb-track{
+  height:10px;border-radius:999px;
+  background:rgba(57,194,234,.06);
+  border:1px solid rgba(57,194,234,.10);
+  overflow:hidden;position:relative;
+}
+.bb-pb-fill{
+  height:100%;border-radius:999px;width:0%;
+  transition:width 1.6s cubic-bezier(.22,.88,.32,1);
+  position:relative;
+}
+.bb-pb-fill::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(230,244,253,.32),transparent);
+  background-size:200% 100%;animation:bb-sh 2.6s infinite;
+}
+@keyframes bb-sh{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.bb-pf-lo{background:linear-gradient(90deg,#1553c7,#39C2EA);}
+.bb-pf-mi{background:linear-gradient(90deg,#a86200,#f5b030);}
+.bb-pf-hi{background:linear-gradient(90deg,#0a7ab8,#39C2EA);}
+
+/* CHIPS */
+.bb-chips{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.bb-chip{padding:6px 7px;border-radius:12px;text-align:center;border:1px solid;background:rgba(255,255,255,.02);}
+.bb-chip .cn{font-size:15px;font-weight:500;line-height:1;margin-bottom:2px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+.bb-chip .cl{font-size:8px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;}
+.bb-ch-b{border-color:rgba(57,194,234,.28);background:rgba(57,194,234,.10);}
+.bb-ch-b .cn{color:#39C2EA;}.bb-ch-b .cl{color:#9CD6EE;}
+.bb-ch-g{border-color:rgba(31,216,122,.28);background:rgba(31,216,122,.10);}
+.bb-ch-g .cn{color:#1fd87a;}.bb-ch-g .cl{color:#6edba8;}
+.bb-ch-y{border-color:rgba(245,176,48,.28);background:rgba(245,176,48,.10);}
+.bb-ch-y .cn{color:#f5b030;}.bb-ch-y .cl{color:#d4900a;}
+.bb-ch-r{border-color:rgba(255,90,90,.28);background:rgba(255,90,90,.10);}
+.bb-ch-r .cn{color:#ff5a5a;}.bb-ch-r .cl{color:#e06060;}
+
+.bb-div{height:1px;background:linear-gradient(90deg,transparent 0%,rgba(57,194,234,.18) 30%,rgba(57,194,234,.18) 70%,transparent 100%);flex-shrink:0;}
+.bb-slbl{font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:#4a6a7a;font-weight:500;margin-bottom:5px;}
+
+/* PHASE */
+.bb-phase{display:flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;font-size:9.5px;font-weight:500;line-height:1.3;min-height:32px;}
+.bb-ph-b{background:rgba(57,194,234,.10);border:1px solid rgba(57,194,234,.28);color:#9CD6EE;}
+.bb-ph-r{background:rgba(255,90,90,.10);border:1px solid rgba(255,90,90,.28);color:#ff8585;}
+.bb-ph-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;animation:bb-blink 2s ease-in-out infinite;box-shadow:0 0 8px currentColor;}
+@keyframes bb-blink{0%,100%{opacity:1}50%{opacity:.30}}
+.bb-ph-pct{margin-left:auto;font-size:11px;font-weight:500;flex-shrink:0;letter-spacing:-.02em;}
+
+/* MILESTONES */
+.bb-mslist{display:flex;flex-direction:column;gap:4px;}
+.bb-msrow{
+  display:grid;grid-template-columns:14px 1fr auto auto;
+  gap:6px;align-items:center;
+  padding:6px 9px;border-radius:10px;border:1px solid;min-height:30px;
+}
+.bb-msdone{background:rgba(31,216,122,.10);border-color:rgba(31,216,122,.26);color:#1fd87a;}
+.bb-msact{background:rgba(245,176,48,.08);border-color:rgba(245,176,48,.26);color:#f5b030;}
+.bb-mspend{background:rgba(255,255,255,.02);border-color:rgba(57,194,234,.10);color:#7aaabb;}
+.bb-msico{font-size:11px;line-height:1;}
+.bb-msname{font-size:9.5px;font-weight:500;line-height:1.2;}
+.bb-msdt{font-size:9px;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
+.bb-mdev{display:inline-flex;align-items:center;padding:2px 7px;border-radius:999px;font-size:8px;font-weight:500;border:1px solid;white-space:nowrap;}
+
+.bb-mdg{background:rgba(31,216,122,.14);border-color:rgba(31,216,122,.30);color:#3de890;}
+.bb-mdr{background:rgba(255,90,90,.14);border-color:rgba(255,90,90,.30);color:#ff7575;}
+.bb-mdn{background:rgba(57,194,234,.08);border-color:rgba(57,194,234,.18);color:#7aaabb;}
+
+/* TASKS */
+.bb-tlist{display:flex;flex-direction:column;gap:4px;}
+.bb-titem{
+  display:flex;align-items:flex-start;gap:6px;
+  padding:5px 10px;border-radius:999px;
+  background:rgba(57,194,234,.05);
+  border:1px solid rgba(57,194,234,.14);
+  font-size:9px;color:#E6F4FD;font-weight:400;line-height:1.4;
+}
+.bb-tdot{width:5px;height:5px;border-radius:50%;background:#39C2EA;opacity:.7;margin-top:4px;flex-shrink:0;box-shadow:0 0 5px rgba(57,194,234,.4);}
+
+/* FOOTER */
+.bb-ft{
+  position:relative;z-index:2;
+  background:rgba(57,194,234,.04);
+  border-top:1px solid rgba(57,194,234,.10);
+  padding:9px 22px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.bb-ft-note{font-size:9px;color:#4a6a7a;display:flex;align-items:center;gap:8px;}
+.bb-ft-note::before{content:'';width:6px;height:6px;border-radius:50%;background:#39C2EA;display:inline-block;}
+.bb-leg{display:flex;gap:14px;}
+.bb-li{display:flex;align-items:center;gap:5px;font-size:9px;color:#7aaabb;font-weight:400;}
+.bb-ld{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+@media print{
+  body{padding:0;background:#070d15;}
+  .bb-page{box-shadow:none;border-radius:0;max-width:100%;}
+}
+
+/* ═══════════════ RESPONSIVE — TABLET & MOBILE ═══════════════ */
+
+/* TABLET 640–1023px: 2 columns + last full width */
+@media (max-width: 1023px) {
+  body{padding:10px;}
+  .bb-page{border-radius:14px;}
+  .bb-grid{
+    grid-template-columns:1fr 1fr;
+    padding:14px;
+    gap:14px;
+  }
+  .bb-card{
+    padding:14px;
+    border-right:none;
+    border:1px solid rgba(57,194,234,.14);
+    border-radius:14px;
+    background:rgba(57,194,234,.02);
+  }
+  .bb-card:first-child,.bb-card:last-child{padding:14px;}
+  .bb-card:nth-child(5){grid-column:1 / -1;}
+  .bb-name{min-height:auto;}
+}
+
+/* MOBILE <640px: single column, header restructured */
+@media (max-width: 639px) {
+  body{padding:8px;}
+  .bb-page{border-radius:12px;}
+
+  /* HEADER — vertical stack */
+  .bb-hdr{
+    flex-direction:column;
+    align-items:stretch;
+    gap:14px;
+    padding:14px 14px 12px;
+  }
+  .bb-h1{font-size:18px;line-height:1.1;}
+  .bb-sub{font-size:10px;}
+
+  /* Stats: 2x2 grid below title */
+  .bb-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .bb-stat{min-width:0;padding:8px 10px;}
+  .bb-stat .vl{font-size:15px;}
+
+  /* GRID — single column */
+  .bb-grid{
+    grid-template-columns:1fr;
+    padding:12px;
+    gap:10px;
+  }
+  .bb-card{
+    padding:14px;
+    gap:10px;
+  }
+  .bb-card:nth-child(5){grid-column:auto;}
+  .bb-name{min-height:auto;font-size:14px;}
+
+  /* Slightly larger touch targets */
+  .bb-launch{padding:12px 14px;}
+  .bb-launch .ll-dt{font-size:16px;}
+  .bb-pb-pct{font-size:24px;}
+  .bb-chip{padding:8px 6px;}
+  .bb-chip .cn{font-size:17px;}
+  .bb-phase{padding:8px 12px;font-size:10px;min-height:36px;}
+  .bb-msrow{padding:8px 10px;min-height:34px;}
+  .bb-msname{font-size:10px;}
+  .bb-msdt{font-size:10px;}
+  .bb-titem{padding:7px 12px;font-size:10px;}
+
+  /* FOOTER — wrap legend */
+  .bb-ft{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px;
+    padding:10px 14px;
+  }
+  .bb-leg{flex-wrap:wrap;gap:10px 14px;}
+
+  /* Reduce decorative blobs on mobile to keep things crisp */
+  .b3{display:none;}
+}
+
+/* SMALL MOBILE <380px — extra tightening */
+@media (max-width: 379px) {
+  .bb-h1{font-size:16px;}
+  .bb-stats{grid-template-columns:1fr;}
+  .bb-chips{grid-template-columns:1fr 1fr;}
+}
+
+
+/* Phase rotator (used by Shuttle and Sky Screamer cards) */
+.phase-rotator{position:relative;height:32px;overflow:hidden;border-radius:999px;}
+.phase-slide{position:absolute;inset:0;display:flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;font-size:9.5px;font-weight:500;background:rgba(57,194,234,.10);border:1px solid rgba(57,194,234,.28);color:#9CD6EE;opacity:0;transform:translateY(8px);transition:opacity .55s,transform .55s;}
+.phase-slide.active{opacity:1;transform:translateY(0);}
+.phase-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.phase-dots{display:flex;justify-content:center;gap:4px;margin-top:6px;}
+.pd{width:5px;height:5px;border-radius:50%;background:rgba(57,194,234,.20);transition:background .3s;}
+.pd.on{background:#39C2EA;box-shadow:0 0 6px #39C2EA;}
+
+</style>
+</head>
+<body>
+
+<div class="bb-page">
+
+  <div class="bb-blob b1"></div>
+  <div class="bb-blob b2"></div>
+  <div class="bb-blob b3"></div>
+
+  <svg class="bb-wave" viewBox="0 0 1200 130" preserveAspectRatio="none">
+    <path d="M0,65 Q150,15 300,55 T600,55 T900,55 T1200,55 L1200,130 L0,130 Z" fill="#39C2EA"/>
+    <path d="M0,80 Q200,40 400,75 T800,75 T1200,75 L1200,130 L0,130 Z" fill="#9CD6EE" opacity=".6"/>
+  </svg>
+
+  <!-- HEADER -->
+  <div class="bb-hdr">
+    <div>
+      <div class="bb-h1">Стратегические проекты <em>«Парк Сказка»</em></div>
+      <div class="bb-sub">Контроль реализации · Статус на 08.05.2026</div>
+    </div>
+    <div class="bb-stats">
+      <div class="bb-stat"><div class="lb">Проектов</div><div class="vl">5</div></div>
+      <div class="bb-stat"><div class="lb">Ближ. запуск</div><div class="vl">22.05</div></div>
+      <div class="bb-stat"><div class="lb">Задач сегодня</div><div class="vl">11</div></div>
+      <div class="bb-stat"><div class="lb">С отклонением</div><div class="vl">4</div></div>
+    </div>
+  </div>
+
+  <!-- GRID -->
+  <div class="bb-grid">
+
+    <!-- 01 Suspended -->
+    <div class="bb-card">
+      <div><div class="bb-num">Проект 01</div><div class="bb-name">Suspended Coaster</div></div>
+      <div class="bb-launch bb-lnv">
+        <div><div class="ll-lbl">Дата запуска</div><div class="ll-dt">25.06.2026</div><span class="ll-dev dr">+3 дн</span></div>
+        <span class="bb-lic">●</span>
+      </div>
+      <div>
+        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="27">0%</span></div>
+        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-lo" data-p="27"></div></div>
+      </div>
+      <div class="bb-chips">
+        <div class="bb-chip bb-ch-b"><div class="cn">237</div><div class="cl">Задач всего</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">21</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-y"><div class="cn">2</div><div class="cl">Сегодня</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">216</div><div class="cl">Остаток</div></div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Активная фаза</div>
+        <div class="phase-rotator" id="rot-suspended">
+          <div class="phase-slide active">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф2. Вокзал, тех. помещение</span>
+            <span class="bb-ph-pct">46%</span>
+          </div>
+          <div class="phase-slide">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф3. Монтаж</span>
+            <span class="bb-ph-pct">5%</span>
+          </div>
+        </div>
+        <div class="phase-dots" data-rotator="rot-suspended"><div class="pd on"></div><div class="pd"></div></div>
+      </div>
+      <div>
+        <div class="bb-slbl">Ключевые этапы</div>
+        <div class="bb-mslist">
+          <div class="bb-msrow bb-msact"><span class="bb-msico">●</span><span class="bb-msname">Монтаж</span><span class="bb-msdt">08.06</span><span class="bb-mdev bb-mdr">+2 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">ПНР</span><span class="bb-msdt">12.06</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">Регистрация</span><span class="bb-msdt">25.06</span><span class="bb-mdev bb-mdr">+2 дн</span></div>
+        </div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Задачи 09–11.05 · 6</div>
+        <div class="bb-tlist">
+          <div class="bb-titem"><span class="bb-tdot"></span>Устройство основания с уплотнением</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Устройство опалубки бетон. подготовки</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Укладка бетона</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Гидроизоляция бетон. подготовки</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Установка опор. Ч1</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Установка опор. Ч2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Shuttle -->
+    <div class="bb-card">
+      <div><div class="bb-num">Проект 02</div><div class="bb-name">Shuttle Coaster</div></div>
+      <div class="bb-launch bb-lnv">
+        <div><div class="ll-lbl">Дата запуска</div><div class="ll-dt">23.06.2026</div><span class="ll-dev dn">0 дн</span></div>
+        <span class="bb-lic">●</span>
+      </div>
+      <div>
+        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="22">0%</span></div>
+        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-lo" data-p="22"></div></div>
+      </div>
+      <div class="bb-chips">
+        <div class="bb-chip bb-ch-b"><div class="cn">297</div><div class="cl">Задач всего</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">71</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-y"><div class="cn">3</div><div class="cl">Сегодня</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">226</div><div class="cl">Остаток</div></div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Активная фаза</div>
+        <div class="phase-rotator" id="rot-shuttle">
+          <div class="phase-slide active">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф2. Вокзал, тех. помещение</span>
+            <span class="bb-ph-pct">22%</span>
+          </div>
+          <div class="phase-slide">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф3. Монтаж</span>
+            <span class="bb-ph-pct">53%</span>
+          </div>
+        </div>
+        <div class="phase-dots" data-rotator="rot-shuttle"><div class="pd on"></div><div class="pd"></div></div>
+      </div>
+      <div>
+        <div class="bb-slbl">Ключевые этапы</div>
+        <div class="bb-mslist">
+          <div class="bb-msrow bb-msact"><span class="bb-msico">●</span><span class="bb-msname">Монтаж</span><span class="bb-msdt">06.06</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">ПНР</span><span class="bb-msdt">13.06</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">Регистрация</span><span class="bb-msdt">23.06</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+        </div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Задачи 09–11.05 · 6</div>
+        <div class="bb-tlist">
+          <div class="bb-titem"><span class="bb-tdot"></span>Протоколы испытаний бетона. Ч4</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Демонтаж опалубки</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Устройство гидроизоляции. Ч1</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Установка опор. Ч13</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Установка платформы. Ч2</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Установка платформы. Ч3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Sky Screamer -->
+    <div class="bb-card">
+      <div><div class="bb-num">Проект 03</div><div class="bb-name">Sky Screamer</div></div>
+      <div class="bb-launch bb-lsky">
+        <div><div class="ll-lbl">Дата запуска</div><div class="ll-dt">22.05.2026</div><span class="ll-dev dr">+3 дн</span></div>
+        <span class="bb-lic" style="color:#39C2EA">●</span>
+      </div>
+      <div>
+        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="64">0%</span></div>
+        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-hi" data-p="64"></div></div>
+      </div>
+      <div class="bb-chips">
+        <div class="bb-chip bb-ch-b"><div class="cn">72</div><div class="cl">Задач всего</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">24</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-y"><div class="cn">1</div><div class="cl">Сегодня</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">48</div><div class="cl">Остаток</div></div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Активная фаза</div>
+        <div class="phase-rotator" id="rot-sky">
+          <div class="phase-slide active">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф2. Тех. помещение, отмостка</span>
+            <span class="bb-ph-pct">24%</span>
+          </div>
+          <div class="phase-slide">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф4. ПНР</span>
+            <span class="bb-ph-pct">71%</span>
+          </div>
+        </div>
+        <div class="phase-dots" data-rotator="rot-sky">
+          <div class="pd on"></div>
+          <div class="pd"></div>
+        </div>
+      </div>
+      <div>
+        <div class="bb-slbl">Ключевые этапы</div>
+        <div class="bb-mslist">
+          <div class="bb-msrow bb-msdone"><span class="bb-msico">✓</span><span class="bb-msname">Монтаж</span><span class="bb-msdt">01.05</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+          <div class="bb-msrow bb-msact"><span class="bb-msico">●</span><span class="bb-msname">ПНР</span><span class="bb-msdt">09.05</span><span class="bb-mdev bb-mdr">+1 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">Регистрация</span><span class="bb-msdt">22.05</span><span class="bb-mdev bb-mdr">+3 дн</span></div>
+        </div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Задачи 09–11.05 · 2</div>
+        <div class="bb-tlist">
+          <div class="bb-titem"><span class="bb-tdot"></span>Набор прочности бетона (отмостка)</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>ПНР. Ч7</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 Spider -->
+    <div class="bb-card">
+      <div><div class="bb-num">Проект 04</div><div class="bb-name">Spider</div></div>
+      <div class="bb-launch bb-lnv">
+        <div><div class="ll-lbl">Дата запуска</div><div class="ll-dt">05.06.2026</div><span class="ll-dev dg">−2 дн</span></div>
+        <span class="bb-lic">●</span>
+      </div>
+      <div>
+        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="5">0%</span></div>
+        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-lo" data-p="5"></div></div>
+      </div>
+      <div class="bb-chips">
+        <div class="bb-chip bb-ch-b"><div class="cn">55</div><div class="cl">Задач всего</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">7</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-y"><div class="cn">3</div><div class="cl">Сегодня</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">48</div><div class="cl">Остаток</div></div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Активная фаза</div>
+        <div class="phase-rotator" id="rot-spider">
+          <div class="phase-slide active">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф3. Монтаж</span>
+            <span class="bb-ph-pct">15%</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="bb-slbl">Ключевые этапы</div>
+        <div class="bb-mslist">
+          <div class="bb-msrow bb-msact"><span class="bb-msico">●</span><span class="bb-msname">Монтаж</span><span class="bb-msdt">23.05</span><span class="bb-mdev bb-mdg">−2 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">ПНР</span><span class="bb-msdt">27.05</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">Регистрация</span><span class="bb-msdt">05.06</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+        </div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Задачи 09–11.05 · 2</div>
+        <div class="bb-tlist">
+          <div class="bb-titem"><span class="bb-tdot"></span>Сборка гидроцилиндров. Ч1</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Сборка гидроцилиндров. Ч2</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 Super Spinning -->
+    <div class="bb-card">
+      <div><div class="bb-num">Проект 05</div><div class="bb-name">Super Spinning</div></div>
+      <div class="bb-launch bb-lnv">
+        <div><div class="ll-lbl">Дата запуска</div><div class="ll-dt">13.06.2026</div><span class="ll-dev dr">+8 дн</span></div>
+        <span class="bb-lic">●</span>
+      </div>
+      <div>
+        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="42">0%</span></div>
+        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-mi" data-p="42"></div></div>
+      </div>
+      <div class="bb-chips">
+        <div class="bb-chip bb-ch-b"><div class="cn">217</div><div class="cl">Задач всего</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">39</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-y"><div class="cn">2</div><div class="cl">Сегодня</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">178</div><div class="cl">Остаток</div></div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Активная фаза</div>
+        <div class="phase-rotator" id="rot-super">
+          <div class="phase-slide active">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф2. Вокзал, тех. помещение</span>
+            <span class="bb-ph-pct">67%</span>
+          </div>
+          <div class="phase-slide">
+            <span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span>
+            <span class="phase-name">Ф3. Монтаж</span>
+            <span class="bb-ph-pct">10%</span>
+          </div>
+        </div>
+        <div class="phase-dots" data-rotator="rot-super"><div class="pd on"></div><div class="pd"></div></div>
+      </div>
+      <div>
+        <div class="bb-slbl">Ключевые этапы</div>
+        <div class="bb-mslist">
+          <div class="bb-msrow bb-msact"><span class="bb-msico">●</span><span class="bb-msname">Монтаж</span><span class="bb-msdt">05.06</span><span class="bb-mdev bb-mdr">+8 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">ПНР</span><span class="bb-msdt">09.06</span><span class="bb-mdev bb-mdn">0 дн</span></div>
+          <div class="bb-msrow bb-mspend"><span class="bb-msico">●</span><span class="bb-msname">Регистрация</span><span class="bb-msdt">13.06</span><span class="bb-mdev bb-mdr">+8 дн</span></div>
+        </div>
+      </div>
+      <div class="bb-div"></div>
+      <div>
+        <div class="bb-slbl">Задачи 09–11.05 · 6</div>
+        <div class="bb-tlist">
+          <div class="bb-titem"><span class="bb-tdot"></span>Лестничный марш. Ч6</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Обшивка вагонкой. Ч5</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Крыша. Ч1</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Двери, окна. Ч5</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Оштукатуривание фасада. Ч1</div>
+          <div class="bb-titem"><span class="bb-tdot"></span>Установка опор. Ч5</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="bb-ft">
+    <span class="bb-ft-note">MS Project · 08.05.2026 · Дата запуска = окончание регистрации</span>
+    <div class="bb-leg">
+      <div class="bb-li"><div class="bb-ld" style="background:#1fd87a"></div>Выполнено</div>
+      <div class="bb-li"><div class="bb-ld" style="background:#f5b030"></div>В работе</div>
+      <div class="bb-li"><div class="bb-ld" style="background:#ff5a5a"></div>Риск</div>
+      <div class="bb-li"><div class="bb-ld" style="background:#7aaabb"></div>Ожидает</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+setTimeout(function () {
+  document.querySelectorAll('.bb-pb-fill[data-p]').forEach(function (el) {
+    el.style.width = el.dataset.p + '%';
+  });
+  document.querySelectorAll('.bb-pb-pct[data-t]').forEach(function (el) {
+    var tgt = parseInt(el.dataset.t, 10), t0 = performance.now();
+    (function step(now) {
+      var p = Math.min((now - t0) / 1600, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(e * tgt) + '%';
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  });
+}, 300);
+
+
+// Suspended Coaster phase rotator
+(function(){
+  var rot = document.getElementById('rot-suspended');
+  if (!rot) return;
+  var slides = rot.querySelectorAll('.phase-slide');
+  var dots = document.querySelectorAll('[data-rotator="rot-suspended"] .pd');
+  var cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    if(dots[cur]) dots[cur].classList.remove('on');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+    if(dots[cur]) dots[cur].classList.add('on');
+  }, 3500);
+})();
+
+// Shuttle Coaster phase rotator
+(function(){
+  var rot = document.getElementById('rot-shuttle');
+  if (!rot) return;
+  var slides = rot.querySelectorAll('.phase-slide');
+  var dots = document.querySelectorAll('[data-rotator="rot-shuttle"] .pd');
+  var cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    if(dots[cur]) dots[cur].classList.remove('on');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+    if(dots[cur]) dots[cur].classList.add('on');
+  }, 3500);
+})();
+
+// Sky Screamer phase rotator
+(function(){
+  var rot = document.getElementById('rot-sky');
+  if (!rot) return;
+  var slides = rot.querySelectorAll('.phase-slide');
+  var dots = document.querySelectorAll('[data-rotator="rot-sky"] .pd');
+  var cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    if(dots[cur]) dots[cur].classList.remove('on');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+    if(dots[cur]) dots[cur].classList.add('on');
+  }, 3500);
+})();
+
+// Super Spinning phase rotator
+(function(){
+  var rot = document.getElementById('rot-super');
+  if (!rot) return;
+  var slides = rot.querySelectorAll('.phase-slide');
+  var dots = document.querySelectorAll('[data-rotator="rot-super"] .pd');
+  var cur = 0;
+  setInterval(function(){
+    slides[cur].classList.remove('active');
+    if(dots[cur]) dots[cur].classList.remove('on');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+    if(dots[cur]) dots[cur].classList.add('on');
+  }, 3500);
+})();
+
+</script>
+
+</body>
+</html>
