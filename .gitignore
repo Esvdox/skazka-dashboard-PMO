@@ -11,3 +11,5 @@ Thumbs.db
 *.bak
 *.tmp
 *~
+# Test artifacts
+index_test.html
