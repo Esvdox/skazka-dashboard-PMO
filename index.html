@@ -23,10 +23,10 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 .bb-stat{padding:9px 14px;border-radius:14px;background:rgba(57,194,234,.08);border:1px solid rgba(57,194,234,.20);text-align:center;min-width:90px;}
 .bb-stat .lb{font-size:9px;color:#9CD6EE;text-transform:uppercase;letter-spacing:.10em;margin-bottom:4px;font-weight:500;}
 .bb-stat .vl{font-size:17px;font-weight:500;color:#E6F4FD;line-height:1;letter-spacing:-.01em;}
-.bb-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);padding:14px 12px 10px;gap:0;}
+.bb-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));padding:14px 12px 10px;gap:0;}
 .bb-card{display:flex;flex-direction:column;gap:8px;padding:0 10px;border-right:1px solid rgba(57,194,234,.10);}
 .bb-card:first-child{padding-left:0;}
-.bb-card:last-child{border-right:none;padding-right:0;}
+.bb-card:last-child{border-right:none;padding-right:0;}.bb-card-nearest{background:linear-gradient(to right,rgba(57,194,234,.18) 0%,rgba(57,194,234,0) 38%,rgba(57,194,234,0) 62%,rgba(57,194,234,.18) 100%);}
 .bb-num{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#4a6a7a;font-weight:500;margin-bottom:2px;}
 .bb-name{font-size:13px;font-weight:500;color:#E6F4FD;letter-spacing:-.02em;line-height:1.15;min-height:32px;display:flex;align-items:flex-start;}
 .bb-launch{border-radius:14px;padding:10px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:6px;border:1px solid;position:relative;overflow:hidden;flex-shrink:0;}
@@ -96,8 +96,8 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 .bb-li{display:flex;align-items:center;gap:5px;font-size:9px;color:#7aaabb;font-weight:400;}
 .bb-ld{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 @media print{body{padding:0;background:#070d15;}.bb-page{box-shadow:none;border-radius:0;max-width:100%;}}
-@media (max-width:1023px){body{padding:10px;}.bb-page{border-radius:14px;}.bb-grid{grid-template-columns:1fr 1fr;padding:14px;gap:14px;}.bb-card{padding:14px;border-right:none;border:1px solid rgba(57,194,234,.14);border-radius:14px;background:rgba(57,194,234,.02);}.bb-card:first-child,.bb-card:last-child{padding:14px;}.bb-name{min-height:auto;}}
-@media (max-width:639px){body{padding:8px;}.bb-page{border-radius:12px;}.bb-hdr{flex-direction:column;align-items:stretch;gap:14px;padding:14px 14px 12px;}.bb-h1{font-size:18px;line-height:1.1;}.bb-sub{font-size:10px;}.bb-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;}.bb-stat{min-width:0;padding:8px 10px;}.bb-stat .vl{font-size:15px;}.bb-grid{grid-template-columns:1fr;padding:12px;gap:10px;}.bb-card{padding:14px;gap:10px;}.bb-card:nth-child(5){grid-column:auto;}.bb-name{min-height:auto;font-size:14px;}.bb-launch{padding:12px 14px;}.bb-launch .ll-dt{font-size:16px;}.bb-pb-pct{font-size:24px;}.bb-chip{padding:8px 6px;}.bb-chip .cn{font-size:17px;}.bb-phase{padding:8px 12px;font-size:10px;min-height:36px;}.bb-msrow{padding:8px 10px;min-height:34px;}.bb-msname{font-size:10px;}.bb-msdt{font-size:10px;}.bb-titem{padding:7px 12px;font-size:10px;}.bb-ft{flex-direction:column;align-items:flex-start;gap:8px;padding:10px 14px;}.bb-leg{flex-wrap:wrap;gap:10px 14px;}.b3{display:none;}}
+@media (max-width:1023px){body{padding:10px;}.bb-page{border-radius:14px;}.bb-grid{display:grid !important;grid-template-columns:1fr 1fr !important;padding:14px;gap:14px;}.bb-card{padding:14px;border-right:none;border:1px solid rgba(57,194,234,.14);border-radius:14px;background:rgba(57,194,234,.02);}.bb-card:first-child,.bb-card:last-child{padding:14px;}.bb-name{min-height:auto;}}
+@media (max-width:639px){body{padding:8px;}.bb-page{border-radius:12px;}.bb-hdr{flex-direction:column;align-items:stretch;gap:14px;padding:14px 14px 12px;}.bb-h1{font-size:18px;line-height:1.1;}.bb-sub{font-size:10px;}.bb-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;}.bb-stat{min-width:0;padding:8px 10px;}.bb-stat .vl{font-size:15px;}.bb-grid{display:grid !important;grid-template-columns:1fr !important;padding:12px;gap:10px;}.bb-card{padding:14px;gap:10px;}.bb-card:nth-child(5){grid-column:auto;}.bb-name{min-height:auto;font-size:14px;}.bb-launch{padding:12px 14px;}.bb-launch .ll-dt{font-size:16px;}.bb-pb-pct{font-size:24px;}.bb-chip{padding:8px 6px;}.bb-chip .cn{font-size:17px;}.bb-phase{padding:8px 12px;font-size:10px;min-height:36px;}.bb-msrow{padding:8px 10px;min-height:34px;}.bb-msname{font-size:10px;}.bb-msdt{font-size:10px;}.bb-titem{padding:7px 12px;font-size:10px;}.bb-ft{flex-direction:column;align-items:flex-start;gap:8px;padding:10px 14px;}.bb-leg{flex-wrap:wrap;gap:10px 14px;}.b3{display:none;}}
 @media (max-width:379px){.bb-h1{font-size:16px;}.bb-stats{grid-template-columns:1fr;}.bb-chips{grid-template-columns:1fr 1fr;}}
 .phase-rotator{position:relative;height:32px;overflow:hidden;border-radius:999px;}
 .phase-slide{position:absolute;inset:0;display:flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;font-size:9.5px;font-weight:500;background:rgba(57,194,234,.10);border:1px solid rgba(57,194,234,.28);color:#9CD6EE;opacity:0;transform:translateY(8px);transition:opacity .55s,transform .55s;}
@@ -127,17 +127,17 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
   <div class="bb-hdr">
     <div>
       <div class="bb-h1">Стратегические проекты <em>«Парк Сказка»</em></div>
-      <div class="bb-sub">Контроль реализации · Статус на 20.05.2026 · Обновлено: 21.05.2026 01:38</div>
+      <div class="bb-sub">Контроль реализации · Статус на 20.05.2026 · Обновлено: 21.05.2026 02:38</div>
     </div>
     <div class="bb-stats">
       <div class="bb-stat"><div class="lb">Проектов</div><div class="vl">6</div></div>
       <div class="bb-stat"><div class="lb">Ближ. запуск</div><div class="vl">03.06</div></div>
-      <div class="bb-stat"><div class="lb">В работе</div><div class="vl">9</div></div>
+      <div class="bb-stat"><div class="lb">В работе</div><div class="vl">10</div></div>
       <div class="bb-stat"><div class="lb">С отклонением</div><div class="vl">5</div></div>
     </div>
   </div>
   <!-- GRID -->
-  <div class="bb-grid" style="display:flex;flex-direction:row;width:100%;box-sizing:border-box;">
+  <div class="bb-grid" style="grid-template-columns:repeat(6,minmax(0,1fr));">
 
     <!-- 01 Suspended Coaster -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
@@ -148,7 +148,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
           <div class="ll-dt">25.06.2026</div>
           <div class="ll-lbl" style="margin-top:6px;">Дата запуска факт</div>
           <div class="ll-dt" style="color:#ff8585;">10.07.2026</div>
-          <span class="ll-dev dr">+11 дн</span><span class="ll-delta ll-delta-r">+5</span>
+          <span class="ll-dev dr">+11 дн</span><span class="ll-delta ll-delta-n">—</span>
         </div>
         <span class="bb-lic">●</span>
       </div>
@@ -202,7 +202,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
           <div class="ll-dt">23.06.2026</div>
           <div class="ll-lbl" style="margin-top:6px;">Дата запуска факт</div>
           <div class="ll-dt" style="color:#ff8585;">24.06.2026</div>
-          <span class="ll-dev dr">+1 дн</span><span class="ll-delta ll-delta-g">−2</span>
+          <span class="ll-dev dr">+1 дн</span><span class="ll-delta ll-delta-n">—</span>
         </div>
         <span class="bb-lic">●</span>
       </div>
@@ -246,7 +246,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
     </div>
 
     <!-- 03 Sky Screamer -->
-    <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
+    <div class="bb-card bb-card-nearest" style="flex:1 1 0;min-width:0;overflow:hidden;">
       <div><div class="bb-num">Проект 03</div><div class="bb-name">Sky Screamer</div></div>
       <div class="bb-launch bb-lsky" data-prev-dev="8">
         <div>
@@ -254,7 +254,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
           <div class="ll-dt">22.05.2026</div>
           <div class="ll-lbl" style="margin-top:6px;">Дата запуска факт</div>
           <div class="ll-dt" style="color:#ff8585;">03.06.2026</div>
-          <span class="ll-dev dr">+8 дн</span><span class="ll-delta ll-delta-g">−1</span>
+          <span class="ll-dev dr">+8 дн</span><span class="ll-delta ll-delta-n">—</span>
         </div>
         <span class="bb-lic" style="color:#39C2EA">●</span>
       </div>
@@ -298,13 +298,13 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
     <!-- 04 Spider -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
       <div><div class="bb-num">Проект 04</div><div class="bb-name">Spider</div></div>
-      <div class="bb-launch bb-lnv" data-prev-dev="-1">
+      <div class="bb-launch bb-lnv" data-prev-dev="-2">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
-          <div class="ll-dt">04.06.2026</div>
+          <div class="ll-dt">05.06.2026</div>
           <div class="ll-lbl" style="margin-top:6px;">Дата запуска факт</div>
           <div class="ll-dt" style="color:#3de890;">03.06.2026</div>
-          <span class="ll-dev dg">−1 дн</span><span class="ll-delta ll-delta-g">−1</span>
+          <span class="ll-dev dg">−2 дн</span><span class="ll-delta ll-delta-g">−1</span>
         </div>
         <span class="bb-lic">●</span>
       </div>
@@ -324,6 +324,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
         <div class="phase-rotator" id="rot-spider">
           <div class="phase-slide active"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">Ф3. Монтаж</span><span class="bb-ph-pct">82%</span></div>
         </div>
+        <div class="phase-dots"><div class="pd on"></div></div>
       </div>
       <div>
         <div class="bb-slbl">Ключевые этапы</div>
@@ -352,7 +353,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
           <div class="ll-dt">13.06.2026</div>
           <div class="ll-lbl" style="margin-top:6px;">Дата запуска факт</div>
           <div class="ll-dt" style="color:#ff8585;">16.06.2026</div>
-          <span class="ll-dev dr">+2 дн</span><span class="ll-delta ll-delta-g">−12</span>
+          <span class="ll-dev dr">+2 дн</span><span class="ll-delta ll-delta-n">—</span>
         </div>
         <span class="bb-lic">●</span>
       </div>
@@ -362,16 +363,16 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
       </div>
       <div class="bb-chips">
         <div class="bb-chip bb-ch-b"><div class="cn">212</div><div class="cl">Задач всего</div></div>
-        <div class="bb-chip bb-ch-g"><div class="cn">92</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">93</div><div class="cl">Выполнено</div></div>
         <div class="bb-chip bb-ch-y"><div class="cn">1</div><div class="cl">В работе</div></div>
-        <div class="bb-chip bb-ch-r"><div class="cn">120</div><div class="cl">Остаток</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">119</div><div class="cl">Остаток</div></div>
       </div>
       <div class="bb-div"></div>
       <div>
         <div class="bb-slbl">Активная фаза</div>
         <div class="phase-rotator" id="rot-super">
           <div class="phase-slide active"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">Ф2. Вокзал, тех. помещение</span><span class="bb-ph-pct">88%</span></div>
-          <div class="phase-slide"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">Ф6. Благоустройство и эл.-снабжение</span><span class="bb-ph-pct">19%</span></div>
+          <div class="phase-slide"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">Ф3. Монтаж</span><span class="bb-ph-pct">27%</span></div>
         </div>
         <div class="phase-dots" data-rotator="rot-super"><div class="pd on"></div><div class="pd"></div></div>
       </div>
@@ -385,13 +386,14 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
       </div>
       <div class="bb-div"></div>
       <div>
-        <div class="bb-slbl">В работе · 5</div>
+        <div class="bb-slbl">В работе · 6</div>
         <div class="bb-tlist">
           <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Вокзал</span><span class="bb-tpct">97%</span></div>
           <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">ТП</span><span class="bb-tpct">75%</span></div>
           <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Оштукатуривание и окраска фасадных стен</span><span class="bb-tpct">71%</span></div>
           <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Оплата кабельной продукции и коммуникаций</span><span class="bb-tpct">50%</span></div>
           <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Оштукатуривание и окраска фасадных стен</span><span class="bb-tpct">50%</span></div>
+          <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Установка рельсов</span><span class="bb-tpct">25%</span></div>
         </div>
       </div>
     </div>
@@ -410,23 +412,22 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
         <span class="bb-lic">●</span>
       </div>
       <div>
-        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="0">0%</span></div>
-        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-lo" data-p="0" style="width:0%"></div></div>
+        <div class="bb-pb-top"><span class="bb-pb-lbl">Готовность</span><span class="bb-pb-pct" data-t="1">1%</span></div>
+        <div class="bb-pb-track"><div class="bb-pb-fill bb-pf-lo" data-p="1" style="width:1%"></div></div>
       </div>
       <div class="bb-chips">
         <div class="bb-chip bb-ch-b"><div class="cn">95</div><div class="cl">Задач всего</div></div>
-        <div class="bb-chip bb-ch-g"><div class="cn">0</div><div class="cl">Выполнено</div></div>
-        <div class="bb-chip bb-ch-y"><div class="cn">1</div><div class="cl">В работе</div></div>
-        <div class="bb-chip bb-ch-r"><div class="cn">95</div><div class="cl">Остаток</div></div>
+        <div class="bb-chip bb-ch-g"><div class="cn">1</div><div class="cl">Выполнено</div></div>
+        <div class="bb-chip bb-ch-y"><div class="cn">2</div><div class="cl">В работе</div></div>
+        <div class="bb-chip bb-ch-r"><div class="cn">94</div><div class="cl">Остаток</div></div>
       </div>
       <div class="bb-div"></div>
       <div>
         <div class="bb-slbl">Активная фаза</div>
         <div class="phase-rotator" id="rot-double">
-          <div class="phase-slide active"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">🚩 СТАРТ МОНТАЖА</span><span class="bb-ph-pct">0%</span></div>
-          <div class="phase-slide"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">Ф3. Монтаж</span><span class="bb-ph-pct">0%</span></div>
+          <div class="phase-slide active"><span class="bb-ph-dot" style="background:#39C2EA;color:#39C2EA"></span><span class="phase-name">Ф3. Монтаж</span><span class="bb-ph-pct">1%</span></div>
         </div>
-        <div class="phase-dots" data-rotator="rot-double"><div class="pd on"></div><div class="pd"></div></div>
+        <div class="phase-dots"><div class="pd on"></div></div>
       </div>
       <div>
         <div class="bb-slbl">Ключевые этапы</div>
@@ -438,9 +439,12 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
       </div>
       <div class="bb-div"></div>
       <div>
-        <div class="bb-slbl">В работе · 1</div>
+        <div class="bb-slbl">В работе · 4</div>
         <div class="bb-tlist">
-          <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">🚩 ТЕРРИТОРИЯ ГОТОВА</span><span class="bb-tpct">99%</span></div>
+          <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Определить ось разгона и обслуживания</span><span class="bb-tpct">88%</span></div>
+          <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">3.1 Геодезическая разбивка площадки</span><span class="bb-tpct">58%</span></div>
+          <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">Определить уровень 0 (нулевую отметку)</span><span class="bb-tpct">44%</span></div>
+          <div class="bb-titem"><span class="bb-tdot"></span><span class="bb-tname">3. МЕХАНИЧЕСКИЙ МОНТАЖ</span><span class="bb-tpct">2%</span></div>
         </div>
       </div>
     </div>
