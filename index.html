@@ -28,7 +28,9 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 .bb-card:first-child{padding-left:0;}
 .bb-card:last-child{border-right:none;padding-right:0;}.bb-card-nearest{background:linear-gradient(to right,rgba(57,194,234,.18) 0%,rgba(57,194,234,0) 38%,rgba(57,194,234,0) 62%,rgba(57,194,234,.18) 100%);}
 .bb-num{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#4a6a7a;font-weight:500;margin-bottom:2px;}
-.bb-name{font-size:13px;font-weight:500;color:#E6F4FD;letter-spacing:-.02em;line-height:1.15;min-height:32px;display:flex;align-items:flex-start;}
+.bb-title{min-height:32px;display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap;}
+.bb-name{font-size:13px;font-weight:500;color:#E6F4FD;letter-spacing:-.02em;line-height:1.15;display:flex;align-items:flex-start;}
+.bb-run{display:inline-flex;align-items:center;justify-content:center;padding:2px 7px;border-radius:999px;border:1px solid rgba(31,216,122,.32);background:rgba(31,216,122,.12);color:#3de890;font-size:8px;font-weight:500;line-height:1.1;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;margin-top:1px;}
 .bb-launch{border-radius:14px;padding:10px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:6px;border:1px solid;position:relative;overflow:hidden;flex-shrink:0;}
 .bb-launch::before{content:'';position:absolute;right:-25px;top:-25px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(57,194,234,.20),transparent 70%);pointer-events:none;}
 .bb-launch .ll-lbl{font-size:8.5px;text-transform:uppercase;letter-spacing:.12em;font-weight:500;margin-bottom:4px;color:#9CD6EE;}
@@ -141,7 +143,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 
     <!-- 01 Путь Дракона -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
-      <div><div class="bb-num">Проект 01</div><div class="bb-name">Путь Дракона</div></div>
+      <div><div class="bb-num">Проект 01</div><div class="bb-title"><div class="bb-name">Путь Дракона</div><span class="bb-run">Запущен</span></div></div>
       <div class="bb-launch bb-lnv" data-prev-dev="12">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
@@ -192,7 +194,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 
     <!-- 02 Бумеранг -->
     <div class="bb-card bb-card-nearest" style="flex:1 1 0;min-width:0;overflow:hidden;">
-      <div><div class="bb-num">Проект 02</div><div class="bb-name">Бумеранг</div></div>
+      <div><div class="bb-num">Проект 02</div><div class="bb-title"><div class="bb-name">Бумеранг</div></div></div>
       <div class="bb-launch bb-lsky" data-prev-dev="24">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
@@ -241,7 +243,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 
     <!-- 03 Смерч -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
-      <div><div class="bb-num">Проект 03</div><div class="bb-name">Смерч</div></div>
+      <div><div class="bb-num">Проект 03</div><div class="bb-title"><div class="bb-name">Смерч</div><span class="bb-run">Запущен</span></div></div>
       <div class="bb-launch bb-lnv" data-prev-dev="34">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
@@ -282,7 +284,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 
     <!-- 04 Паук -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
-      <div><div class="bb-num">Проект 04</div><div class="bb-name">Паук</div></div>
+      <div><div class="bb-num">Проект 04</div><div class="bb-title"><div class="bb-name">Паук</div><span class="bb-run">Запущен</span></div></div>
       <div class="bb-launch bb-lnv" data-prev-dev="14">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
@@ -320,7 +322,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 
     <!-- 05 Вихрь -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
-      <div><div class="bb-num">Проект 05</div><div class="bb-name">Вихрь</div></div>
+      <div><div class="bb-num">Проект 05</div><div class="bb-title"><div class="bb-name">Вихрь</div><span class="bb-run">Запущен</span></div></div>
       <div class="bb-launch bb-lnv" data-prev-dev="21">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
@@ -369,7 +371,7 @@ body{font-family:'PT Root UI','Inter','Segoe UI',system-ui,sans-serif;background
 
     <!-- 06 Сердце Москвы -->
     <div class="bb-card" style="flex:1 1 0;min-width:0;overflow:hidden;">
-      <div><div class="bb-num">Проект 06</div><div class="bb-name">Сердце Москвы</div></div>
+      <div><div class="bb-num">Проект 06</div><div class="bb-title"><div class="bb-name">Сердце Москвы</div></div></div>
       <div class="bb-launch bb-lnv" data-prev-dev="0">
         <div>
           <div class="ll-lbl">Дата запуска план</div>
